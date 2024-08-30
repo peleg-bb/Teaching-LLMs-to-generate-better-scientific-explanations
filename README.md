@@ -100,8 +100,8 @@ The table below summarizes the performance statistics of four different models b
 This statistical analysis demonstrates the effectiveness of fine-tuning, particularly using RLHF, in producing high-quality answers with Llama 2.
 
 <p align="left">
-  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/ridge_plot.png" width="325" style="vertical-align: -5px;">
-  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/rm_stats.png" width="650">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/ridge_plot.png" width="375" style="vertical-align: -5px;">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/rm_stats.png" width="600">
 </p>
 
 ## Conclusion
