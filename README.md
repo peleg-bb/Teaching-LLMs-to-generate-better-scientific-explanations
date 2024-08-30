@@ -1,4 +1,8 @@
-# Teaching LLMs to Generate Better Scientific Explanations
+<h1 align="center">Teaching LLMs to Generate Better Scientific Explanations</h1>
+
+<p align="center">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/Llama.jpg" width="600">
+</p>
 
 **Oded Regev, Tal Hayun, Lucila Silbermann, Shani Landsberger**  
 **Advisor: Dr. Nir Grinberg**  
@@ -19,6 +23,10 @@ Determining quality metrics for evaluating scientific explanations is inherently
 In the SFT phase, we fine-tuned the LLM on a dataset composed of:
 1. **Q/A from Scientific Forums:** We collected question-and-answer pairs from platforms like Stack Exchange, assuming that top-voted answers represent high-quality responses.
 2. **Generated Answers using ChatGPT 3.5 Turbo:** To supplement the dataset, we used ChatGPT 3.5 Turbo to generate answers that aligned with our predefined scientific quality metrics, using few-shot Chain of Thought (CoT) prompting.
+
+<p align="left">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/data_collection.png" width="450">
+</p>
 
 ### Reinforcement Learning (RL) Phase
 In the RL phase, we trained a reward model to evaluate the quality of the model's outputs. This phase included:
@@ -60,11 +68,41 @@ To stay within GPU limits, we implemented:
 3. **Reward Model Training:** Annotating 1,800 Q/A pairs to train the RM, achieving a 90% alignment rate with human annotations.
 4. **Reinforcement Learning with Human Feedback (RLHF):** Using rejection sampling and PPO, although PPO led to degraded quality and was excluded from the final results.
 
+Here is the revised "Results" section with the appropriate modifications, including the relevant results for both human evaluation and reward model evaluation:
+
 ## Results
 
-- **SFT Phase:** Revised SFT achieved an 80% win rate and a 90% agreement rate among annotators.
-- **Reward Model:** RM training showed a 90% alignment rate with human annotations.
-- **RLHF Phase:** Rejection sampling led to an 87% win rate, but the PPO stage degraded answer quality.
+### 1. Supervised Fine-Tuning (SFT)
+- **Initial SFT:** The initial training with forum data led to poor results, with the base model outperforming the SFT model.
+- **Revised SFT:** The revised approach using GPT-3.5 Turbo for answer generation resulted in an 80% win rate and a 90% agreement rate among annotators, demonstrating significant improvement.
+
+### 2. Reward Model (RM)
+- **RM Alignment:** The RM trained on human-annotated data achieved a 90% alignment rate with the human annotations from the SFT evaluation phase, indicating that the RM could effectively replicate human judgment in selecting higher-quality answers.
+
+### 3. Reinforcement Learning (RLHF)
+- **Rejection Sampling:** This method led to a further increase in the win rate to 87%, along with improved preference ratings, making it the most successful stage in our methodology.
+- **PPO Attempt:** The PPO stage did not improve the model and instead led to degradation in answer quality. Despite multiple attempts, the problem persisted, and this stage was excluded from the final results.
+
+### Human Evaluation
+The graph below highlights the effectiveness of both SFT and RLHF in improving the performance of the Llama-2 model, with RLHF showing the most substantial gains. The comparison with GPT-3.5 Turbo demonstrates that the RLHF model not only competes with but often exceeds the performance of another state-of-the-art model.
+
+<p align="left">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/Bar%20graph.png">
+</p>
+
+### Reward Model Evaluation
+The table below summarizes the performance statistics of four different models based on rewards from a reward model across 100 questions:
+- **Llama 2 (Base):** Shows the weakest performance across all metrics, reinforcing the need for fine-tuning.
+- **SFT:** Significantly improves both the consistency and quality of the model's output, as evidenced by the higher mean and lower standard deviation.
+- **RLHF:** Further refines the model, pushing the mean slightly higher and achieving a maximum score.
+- **GPT:** Performs better than the baseline Llama 2 but does not match the fine-tuned models' performance, particularly in terms of consistency (higher STD) and overall quality (lower mean and median).
+
+This statistical analysis demonstrates the effectiveness of fine-tuning, particularly using RLHF, in producing high-quality answers with Llama 2.
+
+<p align="left">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/ridge_plot.png" width="325" style="vertical-align: -5px;">
+  <img src="https://github.com/OdedReg/Teaching-LLMs-to-generate-better-scientific-explanations/blob/main/images/rm_stats.png" width="650">
+</p>
 
 ## Conclusion
 
