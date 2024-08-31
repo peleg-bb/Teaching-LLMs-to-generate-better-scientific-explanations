@@ -68,8 +68,6 @@ To stay within GPU limits, we implemented:
 3. **Reward Model Training:** Annotating 1,800 Q/A pairs to train the RM, achieving a 90% alignment rate with human annotations.
 4. **Reinforcement Learning with Human Feedback (RLHF):** Using rejection sampling and PPO, although PPO led to degraded quality and was excluded from the final results.
 
-Here is the revised "Results" section with the appropriate modifications, including the relevant results for both human evaluation and reward model evaluation:
-
 ## Results
 
 ### 1. Supervised Fine-Tuning (SFT)
