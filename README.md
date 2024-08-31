@@ -113,7 +113,6 @@ scientific experts and the public. The success of this project could pave the wa
 development of more specialized LLMs tailored to various scientific domains, ultimately
 enhancing the quality of communication in these fields.
 
-Here's the "Future Work" section for the README file:
 
 ## Future Work
 
