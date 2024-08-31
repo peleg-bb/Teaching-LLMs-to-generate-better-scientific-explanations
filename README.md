@@ -8,6 +8,30 @@
 **Advisor: Dr. Nir Grinberg**  
 **August 2024**
 
+## Table of Contents
+
+1. [Project Objective](#project-objective)
+2. [Methodology](#methodology)
+   - [Quality Metrics Determination](#quality-metrics-determination)
+   - [Supervised Fine-Tuning (SFT) Phase](#supervised-fine-tuning-sft-phase)
+   - [Reinforcement Learning (RL) Phase](#reinforcement-learning-rl-phase)
+3. [Evaluation](#evaluation)
+   - [Supervised Fine-Tuning (SFT) Evaluation](#supervised-fine-tuning-sft-evaluation)
+   - [Reward Model (RM) Evaluation](#reward-model-rm-evaluation)
+   - [Reinforcement Learning (RLHF) Evaluation](#reinforcement-learning-rlhf-evaluation)
+4. [Tests](#tests)
+   - [Model Selection](#model-selection)
+   - [Training Methodology](#training-methodology)
+   - [Training Phases](#training-phases)
+5. [Results](#results)
+   - [Supervised Fine-Tuning (SFT)](#1-supervised-fine-tuning-sft)
+   - [Reward Model (RM)](#2-reward-model-rm)
+   - [Reinforcement Learning (RLHF)](#3-reinforcement-learning-rlhf)
+   - [Human Evaluation](#human-evaluation)
+   - [Reward Model Evaluation](#reward-model-evaluation)
+6. [Conclusion](#conclusion)
+7. [Future Work](#future-work)
+
 ## Project Objective
 
 This research project aims to fine-tune an existing large language model (LLM) to enhance its ability to generate high-quality scientific explanations. While LLMs are proficient at generating human-like text, they often fall short in producing clear, coherent, and well-structured scientific content. This project focuses on improving the structural quality and scientific writing level of generated explanations, prioritizing these aspects over factual accuracy.
