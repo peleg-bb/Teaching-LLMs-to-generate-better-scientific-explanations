@@ -4,10 +4,12 @@ from huggingface_hub import login
 from transformers import TrainingArguments
 from peft import LoraConfig
 
+import secret_config
+
 # Hugging Face and Neptune credentials
-HUGGING_FACE_KEY = ""
-NEPTUNE_API_TOKEN = ""
-NEPTUNE_PROJECT = ""
+HUGGING_FACE_KEY = secret_config.HUGGING_FACE_KEY
+NEPTUNE_API_TOKEN = secret_config.neptune_api_token
+NEPTUNE_PROJECT = secret_config.neptune_project
 
 # Device and Model configuration
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

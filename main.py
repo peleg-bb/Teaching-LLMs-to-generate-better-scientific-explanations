@@ -20,7 +20,7 @@ def main():
 
     # Preprocess SFT data
     sft_processor = SFTProcessor(base_model_name)
-    df = sft_processor.load_and_process_data("/sise/home/odedreg/GPT_Answers.csv", "/sise/home/odedreg/sft_model.csv")
+    df = sft_processor.load_and_process_data("./data/GPT_Answers.csv", "./data/sft_model.csv")
     train, val, train_df, val_df, test_df = sft_processor.convert_to_hf_datasets(df)
 
     # List of dataframes and their labels
